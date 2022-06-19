@@ -1,30 +1,40 @@
-let quantidade = prompt("Bem vindo ao Parrot Card Game,Por favor escolha de 4-14 cartas. Com quantas cartas deseja jogar?");
+let quantidade = prompt("escolha de 4-14 cartas");
+let arraycartaspares=[];
+let puxarcartas;
+let arrayimagens=[ "bobross","explody","fiesta","metal","revertit","triplets", "unicorn",];
 
-quantidade = Number(quantidade);
- //for (quantidade<4 || quantidade>14){
-  if(quantidade<4 || quantidade>14 ){
-    prompt("Ops,esse número não é valido, digite um número entre 4 e 14 :) ");
-  } 
-
+quantidade=Number(quantidade);
 let resto=quantidade%2;
- if(resto===0){
- quantidade=quantidade;
- alert(`muito bem, ${quantidade} cartas`)
- }else{
- quantidade = quantidade+1;
- alert(`Você quis dizer ${quantidade} cartas`);
- }
 
 
- let = quanto.length =[quantidade]
+if(quantidade>= 4 && quantidade <=14 && resto===0){
+}
+while(quantidade>14 || quantidade<4 ||  isNaN(quantidade)==true || resto===1 || quantidade==null){
+  quantidade = prompt("Comando inválido, Escolha um número par entre 4-14");
+  resto=quantidade%2;
+}
+alert(`muito bem, ${quantidade} cartas`);
 
 
- function selecao(elemento){
-   let boxvisivel = document.querySelector(".box");
-   if(quantidade===2){
-   boxvisivel.classList.add("boxescondido");
-   
+criarcartas();
+function criarcartas(){
+  for(let i=0;i<quantidade;i++){
+    let x=0
+    q=quantidade/2  
+  let cartastemplate= `<div class="box" onclick="selecao(this)">
+                      <img src="/projeto4-parrotscardgame/imagens/front.png">
+                      <img src="imagens/unicornparrot.gif" class="imgverso esconder"></div>`
+                      
+  document.querySelector(".corpo").innerHTML+=cartastemplate;
+/*  arraycartaspares.push(puxarcartas);
+  arraycartaspares.push(puxarcartas);*/
+}}
 
-   }
-   
+/*box.sort(comparador);
+function comparador() { 
+	return Math.random() - 0.5; 
+}*/
+
+function selecao(elemento){
+  elemento.classList.toggle("verso");
 }
