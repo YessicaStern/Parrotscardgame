@@ -1,7 +1,7 @@
 let quantidade = prompt("escolha de 4-14 cartas");
 let cartaspares=[];
 let imagens=[ "bobross", "bobross","explody","explody","fiesta","fiesta","metal","metal","revertit","revertit","triplets", "triplets","unicorn", "unicorn"];
-let ctotal=0;
+let ctotal=1;
 let c=0;
 let imgsrc1;
 let imgsrc2;
@@ -29,6 +29,8 @@ function criarcartas(){
                          <img src="imagens/${cartaspares[i]}parrot.gif" class="verso esconder"></div>`
     document.querySelector(".corpo").innerHTML+=cartastemplate;
 }}
+let arrcompimg=[];
+let cviradas=null;
 
 function selecao(elemento){
 let verso = elemento.querySelector(".verso");
@@ -40,11 +42,13 @@ let imgsrc= elemento.querySelector(".verso");
   frente.classList.add("esconder");
   console.log(c);}
   if(c===1){
-    imgsrc1=imgsrc; 
+    imgsrc1=imgsrc;
   }if(c===2){
     imgsrc2=imgsrc;
   }if(imgsrc1.src===imgsrc2.src){
     console.log("é igual");
+    cviradas+=2;
+    console.log("cartas viradas= "+cviradas);
     c=0;
   }if (c===2 && imgsrc1 !== imgsrc2){ 
     setTimeout(function voltarcartas(){
@@ -53,8 +57,17 @@ let imgsrc= elemento.querySelector(".verso");
                 imgsrc1.classList.add("esconder");
                 img1.querySelector(".frente").classList.remove("esconder");
                 imgsrc2.classList.add("esconder");
-                img2.querySelector(".frente").classList.remove("esconder");
-    },1000);
+                img2.querySelector(".frente").classList.remove("esconder");},1000);
     console.log("n é igual");
     c=0;
-  }}
+  }
+  ctotal++;
+}
+
+//colocar classes pra identificar as imagens dentro do arrau de imagens
+//colocar o contador
+// comprarar as imagens (ta dando erro fala que as imagens são iguais sem ser)
+//(ajeitar o cviradas)
+//imprimir na tela como no notion e reininciar o jogo
+//a responsividade do nome
+//o flip
