@@ -35,8 +35,10 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 1s;
-
+    transition: all 3s;
+}
+.frente{
+    transform: rotateY(180deg);
 }
 .verso{
     transform: rotateY(180deg);
