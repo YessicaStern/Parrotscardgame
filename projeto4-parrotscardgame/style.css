@@ -3,12 +3,16 @@
 body{
     background-color: #e2ea99;
     display:flex;
-    align-items: center;flex-direction: column;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: auto;
 }
-h1{
+h1{ display: flex;
+    text-align:center ;
+    flex-wrap: wrap;
+    margin-left: 150px;
+    margin-right: 100px;
     margin-top: 75px;
     font-family: 'Fredoka One', cursive;
     font-size: 56px;
@@ -16,9 +20,11 @@ h1{
     color:#75B79E;
 }
 .corpo{
-    margin:50px 200px;
+    margin:50px 150px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 img{
     width: 100px;
@@ -35,14 +41,21 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 3s;
+    transition: all 1s;
+   /* position: absolute;
+    backface-visibility: hidden;*/
+    transform-style: preserve-3d;
 }
 .frente{
-    transform: rotateY(180deg);
+    transition: all 1s;
+   
 }
 .verso{
+    transition: all 1s;
     transform: rotateY(180deg);
 }
+
 .esconder{
     display: none;
 }
+
